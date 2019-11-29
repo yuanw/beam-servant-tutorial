@@ -1,27 +1,27 @@
-
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE TypeOperators #-}
+
 module API where
 
-
 import qualified Data.Map as M
-import           Data.Proxy
-import           Servant
-import           Network.Wai.Handler.Warp (run)
+import Data.Proxy
+import Network.Wai.Handler.Warp (run)
+import Servant
 import User
 
-
--- "users" say 
+-- "users" say
 type UserAPI1 = "users" :> Get '[JSON] [User]
-type UserAPI2 = "users" :> Get '[JSON] [User]
-               :<|> "albert" :> Get '[JSON] User
-               :<|> "issac"  :> Get '[JSON] User
+
+type UserAPI2 =
+  "users" :> Get '[JSON] [User]
+    :<|> "albert" :> Get '[JSON] User
+    :<|> "issac" :> Get '[JSON] User
 
 server1 :: Server UserAPI1
 server1 = return users1
 
 server2 :: Server UserAPI2
-server2 = return users1 :<|> return albert :<|> return issac 
+server2 = return users1 :<|> return albert :<|> return issac
 
 userAPI :: Proxy UserAPI2
 userAPI = Proxy

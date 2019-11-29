@@ -115,6 +115,12 @@ in
 }
 #+END_SRC
 
+formatter
+
+https://github.com/tweag/ormolu
+hlint
+stylish-haskell
+
 workflow 
 
 #+BEGIN_SRC shell

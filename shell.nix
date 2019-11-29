@@ -23,6 +23,7 @@ in
       [ hlint
         ghcid
         stylish-haskell
+        ormolu
         hoogle
         (all-hies.selection {selector = p: {inherit (p) ghc865; };})
      ] ++ [pinnedPkgs.cabal-install];
