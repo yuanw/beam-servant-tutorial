@@ -115,11 +115,11 @@ in
 }
 #+END_SRC
 
-formatter
+*** formatter
 
-https://github.com/tweag/ormolu
-hlint
-stylish-haskell
+- https://github.com/tweag/ormolu
+- hlint
+- stylish-haskell
 
 workflow 
 
@@ -162,6 +162,8 @@ main = run 8081 app
 src_haskell[:exports code]{run :: Port -> Application -> IO ()}
 
 [[https://www.stackage.org/haddock/nightly-2019-11-17/warp-3.3.4/Network-Wai-Handler-Warp.html#v:run][run]]
+
+API as a type
 
 * [[https://tathougies.github.io/beam/tutorials/tutorial1/][Beam Tutorial]]
 

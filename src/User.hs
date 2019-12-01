@@ -2,17 +2,17 @@
 
 module User where
 
-import Data.Aeson.Types
-import Data.Time.Calendar
-import GHC.Generics
+import           Data.Aeson.Types
+import           Data.Time.Calendar
+import           GHC.Generics
 
 data SortBy = Age | Name
 
 data User
   = User
-      { _name :: String,
-        _age :: Int,
-        _email :: String,
+      { _name              :: String,
+        _age               :: Int,
+        _email             :: String,
         _registration_date :: Day
       }
   deriving (Eq, Show, Generic)
@@ -39,3 +39,11 @@ users1 =
     albert,
     yuan
   ]
+
+data Position = Position
+  {
+    xCoord :: Int
+  , yCoord :: Int
+  } deriving Generic
+
+instance ToJSON Position
